@@ -1,0 +1,176 @@
+
+To Do
+
+12
+Realizar comentários nos espetáculos.
+To Do
+#24
+Recriar projeto para executar no windows
+To Do
+#25
+Realizar comentários nos Workshops.
+To Do
+#23
+Tela Perfil do espectador.
+To Do
+#22
+Tela de Perfil do Grupo Cultural
+To Do
+#21
+
+Tela de Cadastro de Workshops
+To Do
+#20
+
+Tela de cadastro de Espetáculos
+To Do
+#19
+
+Tela de cadastro do Grupo Cultural
+To Do
+#18
+
+Tela de Cadastro do Espectador
+To Do
+
+#17
+Tela de Login
+To Do
+
+#16
+Textos para o sistema
+To Do
+
+#15
+ Tuesday
+Refatorar Logo (Criar Grid de composição)
+To Do
+
+
+
+
+
+Abrir
+0
+To Do
+
+12
+Realizar comentários nos espetáculos.
+To Do
+#24
+Recriar projeto para executar no windows
+To Do
+#25
+Realizar comentários nos Workshops.
+To Do
+#23
+Tela Perfil do espectador.
+To Do
+#22
+Tela de Perfil do Grupo Cultural
+To Do
+#21
+Tela de Cadastro de Workshops
+To Do
+#20
+Tela de cadastro de Espetáculos
+To Do
+#19
+Tela de cadastro do Grupo Cultural
+To Do
+#18
+Tela de Cadastro do Espectador
+To Do
+#17
+Tela de Login
+To Do
+#16
+Textos para o sistema
+To Do
+#15
+ Tuesday
+Refatorar Logo (Criar Grid de composição)
+To Do
+#14
+Showing all issues
+Improve Issue boards
+Faça upgrade de plano para melhorar os painéis.
+
+Múltiplos painéis
+Painéis de escopo
+Modo de foco nos painéis
+Doing
+
+0
+Review pela equipe
+
+4
+
+Anotações Pré-banca
+Review pela equipe
+
+#2
+Trabalhos relacionados. (Concorrentes)
+Review pela equipe
+
+#5
+Avatar for Karla Alves
+Editar tela Home(Criar padrão de componentização)
+Review pela equipe
+Urgente
+
+#13
+ Mai 14
+Avatar for Lucas Silva
+Criar Glossário
+Review pela equipe
+Urgente
+
+#1
+ Mai 14
+Avatar for Marcelo Gonçalves
+Showing all issues
+
+
+
+
+
+Closed
+3
+Criar o mode OO do sistema.
+Doing
+
+#6
+Avatar for Marcelo Gonçalves
+Página Home em Angular 7 (Header, Body e Footer) com identidade visual da biblioteca de padrões.
+Doing
+
+#7
+
+
+
+
+Backend
+
+2
+Modelar Back-end de acordo com a UML criada
+Backend
+
+#9
+ Mai 14
+Back-end de acordo com a UML do Sistema
+Backend
+
+#10
+ Mai 14
+
+Avatar for Lucas Silva
+Editar Glossário
+
+Front-End
+
+1
+
+Consertar Tela Home
+Front-End
+#11
