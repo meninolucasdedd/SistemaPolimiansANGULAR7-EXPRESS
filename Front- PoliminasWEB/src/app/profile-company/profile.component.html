@@ -1,0 +1,185 @@
+<main class="profile-page">
+    <section class="section-profile-cover section-shaped my-0">
+        <!-- Circles background -->
+        <div class="shape bgExplore shape-primary alpha-4">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="card card-profile shadow mt--300 ">
+                <div class="px-4">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-3 order-lg-2">
+                            <div class="card-profile-image">
+                                <a href="javascript:void(0)">
+                                    <img src="./assets/img/users/rastros.png"  alt="fotodePerfil" class="rounded-circle">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
+                            <div class="card-profile-actions py-4 mt-lg-0">
+                              <a href="javascript:void(0)" class="btn btn-sm btn-info mr-4">Salvar perfil</a>
+                              <a href="mailto:rastos@gmail.com" class="btn btn-sm btn-default float-right">Enviar e-mail</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 order-lg-1">
+                          <div class="card-profile-stats d-flex justify-content-center">
+                            <div>
+                              <span class="heading">20</span>
+                              <span class="description">Peças</span>
+                            </div>
+                            <div>
+                              <span class="heading">10</span>
+                              <span class="description">Fotos</span>
+                            </div>
+                            <div>
+                              <span class="heading">1120</span>
+                              <span class="description">Visualizações</span>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-5">
+                        <h3>{{usuario.nome}}</h3>
+                    </div>
+                    <div class="text-left pl-5 text-justify">
+                        <div class="row text-justify pt-5">
+                            <div class="col-6">
+                               <div class="h6 ma-5">
+                                    <h6 class="pb-3 text-muted">Detalhes da companhia:</h6>
+                               </div>
+                                <div class="h6">
+                                    <i class="fas fa-map-marker-alt mr-3"></i><b>Cidade:</b> {{companhia.endereco.cidade}}
+                                </div>
+                                <div class="h6"><i class="fa fa-bank mr-3"></i><b>Categoria: </b>{{companhia.categoria}}
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <br>
+                                <div class="h6"><i class="fas fa-id-card mr-3"></i><b>Cnpj ou número MEI:
+                                    </b>{{companhia.cnpj}}</div>
+                                <div class="h6"><i class="fas fa-users mr-3"></i><b>Quantidade de membros:
+                                    </b>{{companhia.qtdParticipantes}}</div>
+                                <div class="h6"><i class="fas fa-envelope mr-3"></i><b>Email:</b> {{usuario.email}}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ações -->
+                        <br>
+                        <div class="nav-wrapper pl-1 pr-5">
+                            <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link text-roxo mb-sm-3 mb-md-0 btn-danger" data-toggle="tab" role="tab" aria-controls="tabs-icons-text-1" aria-selected="true" [routerLink]="['/editar-perfil-companhia']"><i class="fas fa-user-edit mr-2"></i>Editar o seu perfil </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link mb-sm-3 mb-md-0 btn-success" data-toggle="tab" role="tab" aria-controls="tabs-icons-text-2  " aria-selected="true" [routerLink]="['/novo-espetaculo']"><i class="ni ni-bell-55 mr-2"></i>Adicionar
+                                        novo espetáculo
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link mb-sm-3 mb-md-0 btn-warning" data-toggle="tab" role="tab" aria-controls="tabs-icons-text-3 " aria-selected="true" [routerLink]="['/novo-workshop']" ngbTooltip="Clique para adicionar um novo workshop"><i
+                                            class="ni ni-calendar-grid-58 mr-2 "></i>Adicionar novo Workshop
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="mt-5 py-5 pl-4 pr-4  text-center">
+                        <h4>Sobre a compainha</h4>
+                        <br>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-9 col-md-12 text-justify">
+                                <p>Dança com certeza é movimento, mas movimento não é necessariamente dança. A dança difere do movimento cotidiano por uma transposição a um nivel mais "poetico" de ações corporais... é um dos universais da cultura... "Dança
+                                    é a emoção e a emoção e a essência do homem". A Cia. de Dança Rastro foi criada em 12 de Novembro de 2002 na Cidade de Quixadá - Ce.</p>
+                                <!-- Mostrar somente quando o perfil for exuto(minimizado) -->
+                             
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="nav-wrapper pl-5 pr-5">
+                        <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link mb-sm-3 mb-md-0 " id="tabs-icons-text-1-tab" data-toggle="tab" role="tab" aria-controls="tabs-icons-text-1" aria-selected="false"><i
+                                        class="ni ni-paper-diploma mr-2"></i>Espetáculos em cartaz
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-2-tab" data-toggle="tab" role="tab" aria-controls="tabs-icons-text-2" aria-selected="false"><i
+                                        class="ni ni-bell-55 mr-2"></i>Espetáculos
+                                    realizados
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-icons-text-3-tab" data-toggle="tab" role="tab" aria-controls="tabs-icons-text-3" aria-selected="true"><i
+                                        class="ni ni-calendar-grid-58 mr-2"></i>Workshops
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card pl-5 pr-5">
+                        <div class="card-body">
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
+                                    <div class="container">
+                                        <div class="row justify-content-center">
+                                            <div class="col-lg-12">
+                                                <div class="row row-grid">
+                                                    <div class="col-lg-4" *ngFor="let work of workshops">
+                                                        <div class="card card-lift--hover shadow border-0">
+                                                            <div class="card-body py-5">
+                                                                <img src="./assets/img/theme/team-3-800x800.jpg" class="img-center img-fluid" alt="" srcset="">
+                                                                    <br>                            
+                                                                    <h6 class="text-primary text-uppercase">{{work.titulo}}
+                                                                    </h6>
+                                                                    <p class="description mt-3">{{work.endereco.cidade}}</p>
+                                                                <div>
+                                                                    <span class="badge badge-pill badge-primary pa-1">{{work.categoria}}</span>
+                                                                    <div class="pt-5 pb-5">
+                                                                        <small class="text-uppercase pb-2">Descrição do workshop:</small>
+                                                                        <br>
+
+                                                                        <br>
+                                                                         <p class="text-justify">{{work.descricao}}</p>
+                                                                    </div>
+                                                                </div> 
+                                                                 <div class="row ma-3">
+                                                                <div class="col-6 pl-3 pb-3" >
+                                                                     <button class="btn btn-icon btn-outline-2 btn-warning" type="button">
+                                                                        <span class="btn-inner--icon"><i class="far fa-edit"></i></span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="col-6">
+                                                                     <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                                                </div>
+                                                            </div>        
+                                                            </div>
+                                                           
+                                                                
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <br>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

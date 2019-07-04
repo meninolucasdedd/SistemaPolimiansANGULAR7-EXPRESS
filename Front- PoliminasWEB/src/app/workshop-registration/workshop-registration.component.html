@@ -1,0 +1,134 @@
+<main>
+    <section class="section section-shaped  section-lg">
+        <div class="shape shape-style-1 bg-gradient-primary background">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="container pt-lg-md">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-sm-offset-2">
+                    <div class="card bgCard shadow border-0">
+                        <div class="card-header bg-white">
+                            <div class="text-muted text-center mb-3 mt-3">
+                                <h3>Cadastrar Workshop
+                                </h3>
+                                <small>Insira as informações abaixo para adicionar um novo workshop</small>
+                            </div>
+                        </div>
+                        <div class="card-body px-lg-5 py-lg-5">
+                            <form (ngSubmit)="onSubmit(workshopForm)" #workshopForm="ngForm">
+                                <div class="form-group mb-3" [ngClass]="{'focused':focus===true}">
+                                    <div class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-ruler-pencil"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="Insira o título do workshop " type="text" (focus)="focus=true" (blur)="focus=false" [(ngModel)]="workshop.titulo" #titulo="ngModel" [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class='col-sm-12'>
+                                            <div class="form-group">
+                                                <div class='input-group-alternative date' id='datetimepicker2'>
+                                                    <input type='date' class="form-control" />
+                                                    <span class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-calendar"></span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <script type="text/javascript">
+                                            $(function() {
+                                                $('#datetimepicker2').datetimepicker({
+                                                    locale: 'pt-br'
+                                                });
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="form-group" [ngClass]="{'focused':focus1===true}">
+                                    <div class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="Cidade" type="text" (focus)="focus1=true" (blur)="focus1=false" [(ngModel)]="workshop.endereco.cidade" #endereco="ngModel" [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                </div>
+                                <div class="form-group" [ngClass]="{'focused':focus1===true}">
+                                    <div class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-users"
+                                                    aria-hidden="true"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="Quantidade de participantes" type="number" (focus)="focus1=true" (blur)="focus1=false" [(ngModel)]="workshop.qtdParticipantes" #qtdParticipantes="ngModel" [ngModelOptions]="{standalone: true}">
+
+                                    </div>
+                                </div>
+                                <div class="form-group" [ngClass]="{'focused':focus1===true}">
+                                    <div class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-th-large"
+                                                    aria-hidden="true"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="Categoria do Workshop" type="text" (focus)="focus1=true" (blur)="focus1=false" [(ngModel)]="workshop.categoria" #categoria="ngModel" [ngModelOptions]="{standalone: true}">
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group" [ngClass]="{'focused':focus1===true}">
+                                    <div class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-usd"
+                                                    aria-hidden="true"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="Valor" type="number" (focus)="focus1=true" (blur)="focus1=false" [(ngModel)]="workshop.valorInscricao" #valorInscricaos="ngModel" [ngModelOptions]="{standalone: true}">
+
+                                    </div>
+                                </div>
+                                <div class="form-group" [ngClass]="{'focused':focus1===true}">
+                                    <div class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-basket"
+                                                    aria-hidden="true"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="Materiais necessários" type="text" (focus)="focus1=true" (blur)="focus1=false" [(ngModel)]="workshop.material" #qtdParticipantes="ngModel" [ngModelOptions]="{standalone: true}">
+
+                                    </div>
+                                </div>
+                                <div class="form-group" [ngClass]="{'focused':focus1===true}">
+                                    <div class="input-group input-group-alternative">
+                                        <textarea class="form-control" placeholder="Insira uma descrição para o workshop" type="text" (focus)="focus1=true" (blur)="focus1=false" [(ngModel)]="workshop.descricao" #qtdParticipantes="ngModel" [ngModelOptions]="{standalone: true}">></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group" [ngClass]="{'focused':focus1===true}">
+                                    <div class="col-lg-12 col-sm-12 col-12">
+                                        <h4 ngbTooltip="Para aumentar a visibilidade de seus clientes, faça um upload agora" class="ma-2">Faça upload de um banner</h4>
+                                        <div class="input-group">
+                                            <input class="btn input-group-btn btn-success" type="file" [(ngModel)]="img" #imagem="ngModel" [ngModelOptions]="{standalone: true}" ngf-accept="'image/*'">
+                                        </div>
+                                        <span class="help-block">
+                                            A resolução do banner precisa ser de 800x800 em formatos: <small> <b>PNG,
+                                                    JPG ou JPEG</b></small>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary my-4">Cadastrar workshop</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>

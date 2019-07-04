@@ -1,0 +1,7 @@
+.bgExplore{
+    background-image: linear-gradient(to right, rgba(68,41,128,1),rgba(189, 21, 141, 0.836) );
+    background-repeat: no-repeat;
+} 
+.badge-warning{
+    color: #bd158d
+}

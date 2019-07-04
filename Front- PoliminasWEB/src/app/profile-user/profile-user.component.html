@@ -1,0 +1,81 @@
+<main class="profile-page">
+    <section class="section-profile-cover section-shaped my-0">
+      <!-- Circles background -->
+      <div class="shape shape-style-1 bgExplore shape-primary alpha-4">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>   
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="card card-profile shadow mt--80">
+          <div>
+            <div class="row justify-content-center">
+              <div class="col-lg-2 order-lg-1"  >
+                <div class="card-profile-image">
+                  <a href="javascript:void(0)">
+                    <img src="./assets/img/theme/team-4-800x800.jpg" class="rounded-circle">
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-2 order-lg-3 text-lg-right align-self-lg-right">
+                <div class="card-profile-actions py-4 mt-lg-0">
+                  <button class= "btn btn-outline-sucess" ngbTooltip= "Clique para editar o seu perfil">Editar perfil</button>
+                </div>
+               
+              </div>
+              <div class="col-lg-4 order-lg-1">
+                <div class="card-profile-stats d-flex justify-content-right"> 
+                  <!-- <div>
+                    <span class="heading">
+                      <a target="_blank" href="https://www.facebook.com/ciadedanca.rastro.1" class="btn btn-neutral btn-icon-only btn-facebook btn-round btn-lg" ngbTooltip="Acesse nosso facebook">
+                      <i class="fa fa-facebook-square"></i></a>
+                    </span>
+                  </div>
+                  <div>
+                    <span class="heading">
+                      <a target="_blank" href="" class="btn btn-neutral btn-icon-only btn-instagram btn-lg btn-round" ngbTooltip="Acesse nosso instagram">
+                        <i class="fa fa-instagram"></i>
+                      </a>
+                    </span>
+                  </div>
+                  <div>
+                    <span class="heading"></span>
+                    
+                  </div> -->
+                </div>
+              </div>
+            </div>
+            <div class="text-left pl-5 mt-5 pt-5 text-justify">
+              <h3>{{usuario.nome}} </h3>
+              <div class="h6"><i class="fas fa-envelope mr-3"></i><b>Email:</b> {{usuario.email}} </div>
+              <div class="h6"><i class="fas fa-map-marker-alt mr-3"></i><b>Cidade: </b> {{espectador.endereco.cidade}}</div>
+              <div class="h6"><i class="fas fa-id-card mr-3"></i><b>CPF: </b>{{espectador.cpf}}</div>
+              <div class="h6"><i class="fa fa-bank mr-3"></i><b>Categoria: </b>Expectador</div>
+            </div>
+            <hr>
+            <div class="mt-5 py-5 pl-5 pr-5  text-center">
+                <h4>Sobre</h4>
+                <br>
+              <div class="row justify-content-center">
+                <div class="col-lg-9 col-md-12 text-justify">
+                  <p>Dança com certeza é movimento, mas movimento não é necessariamente dança. A dança difere do movimento cotidiano por uma transposição a um nivel mais "poetico" de ações corporais... 
+                    é um dos universais da cultura... "Dança é a emoção e a emoção e a essência do homem".
+                    A Cia. de Dança Rastro foi criada em 12 de Novembro de 2002 na Cidade de Quixadá - Ce.</p>
+                      <!-- Mostrar somente quando o perfil for exuto(minimizado) -->
+                    <a href="javascript:void(0)" class="text-center">Ver mais</a>
+                </div>
+              </div>
+            </div>
+            <hr>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  

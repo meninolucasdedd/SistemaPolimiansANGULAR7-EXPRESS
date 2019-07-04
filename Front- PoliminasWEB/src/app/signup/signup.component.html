@@ -1,0 +1,166 @@
+<main>
+  <section class="section section-shaped section-lg">
+    <div class="shape shape-style-1 bg-gradient-default">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="container pt-lg-md">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card bg-secondary shadow border-0" id="cardCad">
+
+            <div class="card-body px-lg-5 py-lg-5">
+              <div class="text-center text-muted mb-4">
+                  
+                <i class="fas fa-user-circle cadastro text-center"></i>
+                <br>
+                <h5 class="mt-2">Vamos iniciar o seu cadastro</h5>
+                <small>Preencha as informações abaixo</small>
+              </div>
+              <form role="form" (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm">
+                <div class="form-group" [ngClass]="{'focused':focus===true}">
+                  <div class="input-group-alternative input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                    </div>
+                    <input 
+                      class="form-control" 
+                      placeholder="Insira seu nome" 
+                      type="text" (focus)="focus=true"
+                      (blur)="focus=false" 
+                      [(ngModel)]="usuario.nome" 
+                      #nome="ngModel" 
+                      required
+                      [ngModelOptions]="{standalone: true}"
+                      [ngClass]="{ 'invalid': registerForm.submitted && nome.invalid }"
+                    >
+                  </div>
+                  <div 
+                    *ngIf="nome.invalid && registerForm.submitted" 
+                     class="text-danger mt-2 pl-4" 
+                     role="alert">
+                      <div *ngIf="nome.errors['required']">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>É necessário inserir um nome
+                      </div>
+                  </div>
+                </div>
+                <div class="form-group" [ngClass]="{'focused':focus1===true}">
+                  <div class="input-group-alternative input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Insira seu email" type="email" (focus)="focus1=true"
+                      (blur)="focus1=false" [(ngModel)]="usuario.email" [ngModelOptions]="{standalone: true}"
+                      #email="ngModel" required [ngClass]="{ 'invalid': registerForm.submitted && email.invalid }">
+                  </div>
+                  <div *ngIf="email.invalid && registerForm.submitted" class="text-danger  mt-2 pl-4" role="alert">
+                    <div *ngIf="email.errors['required']"><i class="fas fa-exclamation-triangle mr-2"></i>É necessário inserir um email</div>
+                  </div>
+                </div>
+
+                <div class="form-group" [ngClass]="{'focused':focus2===true}">
+                  <div class="input-group-alternative input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Insira sua senha" type="password" (focus)="focus2=true"
+                      (blur)="focus2=false" [(ngModel)]="usuario.senha" [ngModelOptions]="{standalone: true}"
+                      #senha="ngModel" required minlength="6"
+                      [ngClass]="{ 'invalid': registerForm.submitted && senha.invalid }">
+
+                  </div>
+                  <div *ngIf="senha.invalid && registerForm.submitted" class="text-danger mt-2 pl-4" role="alert">
+                    <div *ngIf="senha.errors['required']"> <i class="fas fa-exclamation-triangle mr-2"></i>É necessário inserir uma
+                      senha</div>
+                    <div *ngIf="senha.errors['minlength']"> <i class="fas fa-exclamation-triangle mr-2"></i><b>Opa!</b> Sua senha precisa ter no minimo 6 caracters.
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group" [ngClass]="{'focused':focus2===true}">
+                  <div class="input-group-alternative input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Insira sua cidade" type="text" (focus)="focus2=true"
+                      (blur)="focus2=false" [(ngModel)]="espectador.endereco.cidade"  [(ngModel)]="companhia.endereco.cidade"
+                      [ngModelOptions]="{standalone: true}" #endereco="ngModel" required minlength="6"
+                      [ngClass]="{ 'invalid': registerForm.submitted && endereco.invalid }">
+                  </div>
+                  <div *ngIf="endereco.invalid && registerForm.submitted" class="text-danger mt-2 pl-4" role="alert">
+                    <div *ngIf="endereco.errors['required']"><i class="fas fa-exclamation-triangle mr-2"></i>É necessário o nome de sua cidade</div>
+                  </div>
+                </div>
+                <div class="tipoConta">
+                  <div class="text-muted text-justify text-center">
+                    <h6 class="ma-3"><b>Selecione o tipo de conta</b></h6>
+                    
+                  </div>
+                  <div class="text-center text-justify">
+                    <form class="row">
+                      <div class="col-12 ">
+                        <div class="custom-control justify-content-center custom-radio mb-3">
+                          <input class="custom-control-input" id="pessoaFisica" #pf checked='true' type="radio"
+                            value="espectador" [(ngModel)]="tipoConta" name="tipoConta">
+                          <label class="custom-control-label" for="pessoaFisica" ngbTooltip= "Os espectadores são aqueles que apreciam voluntariamente ou não um evento."> Sou um  espectador <i class="fas fa-question-circle ml-3"></i></label>
+                        </div>
+                        <div class="custom-control custom-radio mb-3">
+                          <input class="custom-control-input"value="companhia" [(ngModel)]="tipoConta" id="companhia" type="radio" #pj name="tipoConta">
+                          <label class="custom-control-label" for="companhia" ngbTooltip= "Uma companhia de dança ou companhia de teatro,  é um grupo de dançarinos  ou artistas, e pessoal associado que trabalham juntos para realizar danças como um espetáculo ou entretenimento. Existem muitos tipos diferentes de companhias de dança, muitas vezes trabalhando em diferentes estilos de dança."> Sou uma companhia <i class="fas fa-question-circle ml-3"></i></label>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="form-group" [ngClass]="{'focused':focus2===true}">
+                  <div class="input-group input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-badge"></i></span>
+                    </div>
+                    <input 
+                    [hidden]="!pf.checked" class="form-control" placeholder="Insira o seu CPF" type="text"
+                      (focus)="focus=true" (blur)="focus2=false" [(ngModel)]="espectador.cpf"
+                      [ngModelOptions]="{standalone: true}" #cpf="ngModel" required mask="000.000.000-00" maxlength="14"
+                      [ngClass]="{ 'invalid': registerForm.submitted && cpf.invalid}">
+
+                    <input [hidden]="!pj.checked" required mask="00.000.000/0000-00" class="form-control"
+                      placeholder="Insira o CNPJ da compainha" type="text" (focus)="focus=true"
+                      [(ngModel)]="companhia.cnpj"
+                      [ngModelOptions]="{standalone: true}" #cnpj="ngModel" (blur)="focus2=false">
+                  </div>
+                  <div [hidden]="!pf.checked"  *ngIf="cpf.invalid && registerForm.submitted" class="text-danger mt-2 pl-4">
+                    <div [hidden]="!pf.checked" *ngIf="cpf.errors['required']"><b>Opa! </b>Utilizamos o seu CPF para validar o seu cadastro
+                    </div>
+                  </div>
+                  <div [hidden]="!pj.checked"  *ngIf="cnpj.invalid && registerForm.submitted" class="text-danger mt-2 pl-4">
+                      <div [hidden]="!pj.checked" *ngIf="cnpj.errors['required']"><b>Opa! </b>Utilizamos o seu CNPJ para validar o seu cadastro
+                      </div>
+                    </div>
+                </div>
+                <div class="row my-4">
+                  <div class="col-12 text-center">
+                    <div class="custom-control custom-control-alternative custom-checkbox">
+                      <input class="custom-control-input" id="customCheckRegister" type="checkbox">
+                      <label class="custom-control-label" for="customCheckRegister">
+                        <span>Eu aceito os <a href="javascript:void(0)" class="text-success">Termos de uso</a>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary mt-4">Criar conta</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

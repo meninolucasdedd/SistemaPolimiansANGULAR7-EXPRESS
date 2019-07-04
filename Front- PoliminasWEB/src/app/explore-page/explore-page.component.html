@@ -1,0 +1,151 @@
+<main class="profile-page">
+    <section class="section section-md bgExplore section-shaped pb-30">
+        <div class="shape shape-style-1 shape-default">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="container py-lg-md d-flex ">
+            <div class="col px-0">
+                <div class="row ">
+                    <div class="col-lg-12">
+                        <h1 class="display-3  text-white">Descubra novos trabalhos.
+                            <h6 class="text-white  text-justify pl-1 pt-2">Busque por compainhas de teatro e dança, ou workshops abertos <br>por compainhas, espalhados por todo o Ceará. </h6>
+                        </h1>
+                        <br>
+
+                        <div class="input-group input-group-alternative mb-4 mt-2">
+                            <input class="form-control" [(ngModel)]="searchText" (change)="scrollTo()" name="busca" placeholder=" Digite o nome do projeto ou compainha" type="text">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-search"></i></span>
+                            </div>
+                            <button class="btn  btnRoxo" (click)="scrollTo()" type="button">Buscar</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="nav-wrapper pl-5 pr-5">
+        <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
+            <li class="nav-item ">
+                <a class="nav-link  espetaculos mb-sm-3 mb-md-0 " id="tabs-icons-text-1-tab" (click)="listar(especList)" #especList data-toggle="tab" role="tab" [routerLink] aria-controls="tabs-icons-text-1" aria-selected="true"><i
+              class="ni ni-paper-diploma mr-2"></i>Espetáculos em cartaz
+          </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-2-tab" (click)="listar(compList)" [routerLink] routerLinkActive="router-link-active" #compList data-toggle="tab" role="tab" aria-controls="tabs-icons-text-2" aria-selected="false"><i
+              class="ni ni-bell-55 mr-2"></i>Todas as Companhias
+          </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-icons-text-3-tab" (click)="listar(workList)" #workList data-toggle="tab" role="tab" [routerLink] aria-controls="tabs-icons-text-3" aria-selected="false"><i
+              class="ni ni-calendar-grid-58 mr-2"></i>Workshops Abertos
+          </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card pl-5 pr-5">
+        <div class="card-body">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-12">
+                                <div *ngIf="especList.classList.contains('active')" class="row row-grid">
+                                    <div class="col-lg-4" *ngFor="let item of espetaculos | filter: searchText">
+                                        <br>
+                                        <br>
+                                        <div class="card card-lift--hover shadow border-0">
+                                            <div class="card-body py-5">
+                                                <img src="./assets/img/pecas/vidaemorte.jpg" class="img-center img-fluid" alt="" srcset="">
+                                                <br>
+                                                <h6 class="text-primary text-uppercase text-center">{{item.titulo}}</h6>
+                                                <p class="description mt-3">{{item.datas}}</p>
+                                                <div class="text-justify">
+                                                    <p class="text-center">{{item.descricao}}</p>
+                                                </div>
+                                                <div class="h6 pt-2 left text-muted">
+                                                    <i class="fas fa-map-marker-alt mr-2 mt-2 mb-2"></i>Local: {{item.endereco.cidade}}
+                                                </div>
+                                                <div>
+                                                    <span class="badge badge-pill badge-warning mr-1" ngbTooltip="Categoria do espetáculo">{{item.categoria}}</span>
+                                                </div>
+                                                <a (click)="espetDetalhe(item._id)" routerLinkActive="router-link-active" class="btn text-center mt-4 btnEspetaculo text-white" ngbTooltip="Clique para saber mais">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngIf="compList.classList.contains('active')" class="row row-grid">
+                                    <div class="col-lg-4" *ngFor="let item of companhias | filter: searchText">
+                                        <div class="card card-lift--hover shadow border-0">
+                                            <div class="card-body py-5">
+                                                <img src="./assets/img/theme/team-4-800x800.jpg" class="img-center img-fluid" alt="" srcset="">
+                                                <br>
+                                                <h6 class="text-primary text-uppercase text-center">{{item.categoria}}</h6>
+                                                <p class="description mt-3">{{item.endereco.cidade}}</p>
+                                                <a (click)="compDetalhe(item._id)" routerLinkActive="router-link-active" class="btn btn-primary mt-4" ngbTooltip="Clique para saber mais">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngIf="workList.classList.contains('active')" class="row row-grid">
+                                    <div class="col-lg-4" *ngFor="let work of workshops | filter: searchText">
+                                        <div class="card card-lift--hover shadow border-0 ma-4">
+                                            <div class="card-body py-5">
+                                                <img src="./assets/img/workshops/work.PNG" class="img-center img-fluid" alt="" srcset="">
+                                                <br>
+                                                <h6 class="text-primary text-uppercase text-center">{{work.titulo}}</h6>
+
+                                                <div class="text-justify">
+                                                    <p class="text-center">{{work.descricao}}</p>
+                                                </div>
+                                                <p class="description mt-3">{{work.datas}}</p>
+                                                <div class="h6 pt-2 left text-muted">
+                                                    <i class="fas fa-map-marker-alt mr-2 mt-2 mb-2"></i>Local: {{work.endereco.cidade}}
+                                                </div>
+                                                <div>
+                                                    <span class="badge badge-pill badge-primary mr-1" ngbTooltip="Categoria do workshop">{{work.categoria}}</span>
+                                                </div>
+                                                <a (click)="workDetalhe(work._id)" routerLinkActive="router-link-active" class="btn btn-primary mt-4 " ngbTooltip="Clique para saber mais">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <nav aria-label="Navegue para as próximas páginas">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">
+                                        <i class="fa fa-angle-left"></i>
+                                        <span class="sr-only">Próximo</span>
+                                    </a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="">1</a></li>
+                                <li class="page-item "><a class="page-link" href="">2</a></li>
+                                <li class="page-item"><a class="page-link" href="">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="">
+                                        <i class="fa fa-angle-right"></i>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

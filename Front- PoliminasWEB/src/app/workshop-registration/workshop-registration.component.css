@@ -1,0 +1,12 @@
+.bg{
+    background-image: url("https://drscdn.500px.org/photo/100467817/q%3D80_m%3D1500/v2?webp=true&sig=bf86805862c63ec82ce4013d42a15813421e6da1b436a8b56aa6d4e885018043");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+.bgCard{
+  background-color: #f5f3f3
+}

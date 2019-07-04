@@ -1,0 +1,66 @@
+const Workshop = require("../models/workshop-model");
+
+let workshops = [];
+
+let id = 0;
+
+class WorkshopService {
+    
+    static register(data) {
+        if(!auth.check(req.headers.authorization,res)) return;
+        let work = new Workshop(id++, data.titulo, data.grupoCultural, data.descricao,
+            data.categoria, data.participantes, data.valorInscricao,
+            data.datas, data.endereco);
+        workshops.push(work);
+        return (workshops);
+    }
+
+    static list() {
+        return workshops;
+    }
+
+    static update(id, data) {
+        if(!auth.check(req.headers.authorization,res)) return;
+        for (let work of workshops) {
+            if (work.id == id) {
+                work.id = data.id;
+                work.titulo = data.titulo;
+                work.grupoCultural = data.grupoCultural;
+                work.descricao = data.descricao;
+                work.categoria = data.categoria;
+                work.participantes = data.participantes;
+                work.valorInscricao = data.valorInscricao;
+                work.datas = data.datas;
+                work.endereco = data.endereco;
+
+                return work;
+            }
+        }
+        return null;
+    }
+
+    static delete(id) {
+
+        if(!auth.check(req.headers.authorization,res)) return;
+        for (let i = 0; i < workshops.length; i++) {
+            if (workshops[i].id == id) {
+                workshops.splice(i, 1);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    static retrieve(id) {
+        if(!auth.check(req.headers.authorization,res)) return;
+        for (let i = 0; i < workshops.length; i++) {
+            if (workshops[i].id == id) {
+                return workshops[i];
+            }
+        }
+        return {};
+    }
+
+}
+
+module.exports = WorkshopService;

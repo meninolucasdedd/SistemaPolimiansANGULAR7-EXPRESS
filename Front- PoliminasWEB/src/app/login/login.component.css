@@ -1,0 +1,19 @@
+.btn-primary{
+    background-color: rgb(189, 21, 141);
+    border-radius: 04px;
+    border-color: rgb(189, 21, 141);
+}
+.btn-outline-default{
+    background-color: #442980;
+    color: white;
+}
+.btn-outline-default:hover{
+    background-color:  white;
+    color: #442980;
+}
+
+
+.cadastro{
+    font-size: 150px;
+    color: #442980;
+}
