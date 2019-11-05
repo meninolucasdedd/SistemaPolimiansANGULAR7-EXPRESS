@@ -13,6 +13,6 @@
     "express": "~4.13.1",
     "express-fileupload": "^1.1.5",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.5.11"
+    "mongoose": "^5.7.5"
   }
 }
